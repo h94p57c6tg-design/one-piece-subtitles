@@ -4,7 +4,7 @@ This file tracks potentially inaccurate AI-transcribed English-dub captions that
 
 - Current source: `One_Pace_Wano_01_English_Dub_Captions_Corrected_v1.srt`
 - Timed caption cues: **327**
-- Previously confirmed correction: three occurrences of the Mink term **y​ougara** now appear as **yougara** in the SRT (at cues 23, 105, 109).
+- Previously confirmed correction: three occurrences of the Mink term **yougara** were corrected in the SRT in the SRT (at cues 23, 105, 109).
 - Review status: **not fully proofread**. The entries below are leads, not confirmed errors.
 
 | Cue | Approximate time | Current text to check |
