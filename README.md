@@ -31,3 +31,9 @@ To enable GitHub Pages for this public repository, open **Settings → Pages**. 
 - Prefer English dub and no full episode download.
 - Fix obvious caption errors without changing cue timings unless the new timing has been tested.
 - This repository contains a link directory; no episode video is included. One Pace and Muhn Pace are unofficial fan edits.
+
+## VLC subtitle playback (v3)
+
+The updated `index.html` now includes **VLC + SRT** buttons. VLC for iOS supports a `vlc-x-callback://x-callback-url/stream` deep link with `url` and `sub` parameters. The older M3U playlist only contained video URLs, so it did not supply external captions. The new VLC buttons have not yet been tested on the user's iPhone; the existing Infuse buttons remain available.
+
+Wano 53 and 55 have no matching SRT. Muhn Pace 05-30 uses subtitle timings from different One Pace edits, which are not verified to sync with Muhn videos.
