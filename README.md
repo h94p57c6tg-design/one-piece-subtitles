@@ -40,3 +40,9 @@ For this repository, the usual site address is `https://h94p57c6tg-design.github
 This repository is a player interface and link index only; no video files are hosted here. The third-party video sources and subtitle libraries may change, and the One Pace / Muhn Pace edits are unofficial.
 
 **Local validation performed:** JavaScript syntax check and a Chromium test with mocked video/subtitle responses verified navigation, 62 episode buttons, SRT parsing, caption overlay, caption controls, and filters. **Actual Pixeldrain playback on laptops, Chromecast, Fire TV, or iPhone has not been verified through this test.**
+
+## Desktop VLC support (v5)
+
+Open the universal hub and click **VLC Desktop + SRT** on an episode. Your desktop browser downloads a small `.m3u` playlist with the original streaming video URL and an `#EXTVLCOPT:sub-file=...` reference to its external captions. Open that playlist with **VLC Media Player on Mac, Windows, or Linux**. It does **not** download the video.
+
+**Caption caveat:** VLC desktop's support for SRT files hosted at remote HTTPS URLs is inconsistent. If video starts without captions, use that episode's **Matching SRT** link to save its subtitle file, then choose **VLC → Subtitle → Add Subtitle File**. The missing SRT for Wano 53 and 55 and synchronization caveats for Muhn Pace 05–30 remain unchanged. This is a best-effort desktop playback workflow, not a guaranteed automatic-captions button. The existing in-browser, iPhone VLC, and Infuse buttons are retained.
