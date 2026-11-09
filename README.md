@@ -1,39 +1,42 @@
-# One Pace + Muhn Pace · Wano English-dub viewing hub
+# One Pace · Universal Wano Viewing Hub
 
-This repository contains a 62-episode iPhone-friendly viewing directory (`index.html`) and the corrected Wano 01 English-dub subtitle file.
+This repository now serves the **Universal Hub v4** at `index.html`. It contains 62 links in order and an HTML5 browser player for laptop Firefox/Chrome and TV browsers, plus the existing iPhone Infuse and VLC options.
 
-## Current viewing order
+## Episode order
+- Wano 01–04: One Pace English dub.
+- Wano 05–30: Muhn Pace English dub.
+- Wano 31–62: One Pace English dub.
+- Wano continues beyond episode 62. Later video sources have not been verified for this directory.
 
-- Wano 01–04: One Pace, English dub.
-- Wano 05–30: Muhn Pace, English dub, filling the original One Pace playlist's subtitled-only interval.
-- Wano 31–62: One Pace, English dub.
-- Wano continues after episode 62. The dub-subtitle source lists Wano 63–87, but this repository does not yet contain verified direct English-dub video IDs for those episodes.
+## Browser playback and captions
+- Click **Watch in Browser** to open the built-in HTML5 player.
+- Captions are fetched as SRT files from GitHub and synchronized in a screen overlay. A WebVTT track is also generated for native subtitle display where supported.
+- The video is streamed from existing Pixeldrain direct-file links. **We have not confirmed that Pixeldrain permits browser playback from this GitHub-hosted page.** If the remote host blocks it, try the alternate host, direct file, or Infuse.
+- Wano 01 uses `One_Pace_Wano_01_English_Dub_Captions_Corrected_v1.srt` (partially corrected, not fully proofread).
+- Wano 02–04 and 31–62 except 53/55 use unreviewed AI-generated DubTitlerr transcriptions.
+- Wano 05–30 use **Muhn Pace videos** with SRT timings made for a **different One Pace edit**. The caption timing has not been verified; simple shifting cannot necessarily fix edit differences.
+- Wano 53 and 55 have **no matching SRT** in the catalog. Do not promise captions for them.
 
-## Captions: important limitations
+## Laptop, Chromecast and Fire TV
+- **Laptop:** open the published hub in Firefox or Chrome; choose Watch in Browser. The local downloadable HTML may also work in desktop browsers if remote subtitle fetch is allowed.
+- **Chromecast:** use Chrome on a laptop to **Cast screen** so the browser-rendered caption overlay is included. This is desktop/screen mirroring, *not* a native Chromecast receiver app. The laptop must remain on and audio sharing may need enabling.
+- **Fire TV:** open the published URL in Amazon Silk; use the browser player. Silk can play HTML5 MP4, but success depends on Pixeldrain policies and TV codec support.
+- **iPhone:** browser player may work, or use the previously tested **Infuse + SRT** fallback. The **VLC iPhone** button uses an iOS-specific URI and is not intended for desktop VLC.
 
-- **Wano 01** uses `One_Pace_Wano_01_English_Dub_Captions_Corrected_v1.srt`, a locally corrected AI transcription. It is not yet completely proofread.
-- **Wano 02–04 and 31–62 (except 53 and 55)** link to unreviewed English-dub subtitle transcriptions from [DubTitlerr-subtitles](https://github.com/XenaRathon/DubTitlerr-subtitles).
-- **Wano 05–30** use Muhn Pace videos with subtitle files made for *One Pace* edits; timing has **not** been synchronized or validated for the Muhn edits. Those SRTs are experimental, not confirmed matching.
-- **Wano 53 and 55** have no available entries in the above subtitle catalog. The hub offers video-only playback rather than a broken captions button.
+## Publish the hub as a website
 
-## Use the viewing hub on iPhone
+A repository file is not automatically a website. GitHub Pages must be enabled once:
 
-Open `index.html` in a browser (once published through GitHub Pages) or use the downloaded HTML file. Tap **Play + SRT** to request Infuse with the linked video and external subtitles, or **Save + SRT** to save the pairing without downloading the video. The direct video URL and video-only option are available for each episode. Actual playback depends on the original host and installed Infuse version.
+1. Open this repository's **Settings** tab.
+2. Select **Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**.
+4. Set **main** and **/(root)**, then **Save**.
+5. Wait for GitHub's confirmed published site address shown in Pages settings.
 
-### Optional: turn the GitHub file into an easy website
+For this repository, the usual site address is `https://h94p57c6tg-design.github.io/one-piece-subtitles/` **only if GitHub Pages has successfully published it**.
 
-To enable GitHub Pages for this public repository, open **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, select **main** and **/(root)**, then **Save**. Once published, the site address will ordinarily be `https://h94p57c6tg-design.github.io/one-piece-subtitles/`. Do not assume that address works until the Pages deployment succeeds.
+## Notes
 
-## Project principles
+This repository is a player interface and link index only; no video files are hosted here. The third-party video sources and subtitle libraries may change, and the One Pace / Muhn Pace edits are unofficial.
 
-- Preserve all previously working One Pace direct links.
-- Do not present unreviewed or unsynchronized captions as fully verified closed captions.
-- Prefer English dub and no full episode download.
-- Fix obvious caption errors without changing cue timings unless the new timing has been tested.
-- This repository contains a link directory; no episode video is included. One Pace and Muhn Pace are unofficial fan edits.
-
-## VLC subtitle playback (v3)
-
-The updated `index.html` now includes **VLC + SRT** buttons. VLC for iOS supports a `vlc-x-callback://x-callback-url/stream` deep link with `url` and `sub` parameters. The older M3U playlist only contained video URLs, so it did not supply external captions. The new VLC buttons have not yet been tested on the user's iPhone; the existing Infuse buttons remain available.
-
-Wano 53 and 55 have no matching SRT. Muhn Pace 05-30 uses subtitle timings from different One Pace edits, which are not verified to sync with Muhn videos.
+**Local validation performed:** JavaScript syntax check and a Chromium test with mocked video/subtitle responses verified navigation, 62 episode buttons, SRT parsing, caption overlay, caption controls, and filters. **Actual Pixeldrain playback on laptops, Chromecast, Fire TV, or iPhone has not been verified through this test.**
